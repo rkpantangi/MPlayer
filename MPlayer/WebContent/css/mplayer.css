@@ -1,0 +1,48 @@
+#main {
+	width: 900px;
+	position: relative;
+	background-position: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+#main #browse {
+	width: 550px;
+	border: 2px solid #ebf3fb;
+	text-align: center;
+}
+#main #player {
+	left: 560px;
+}
+
+#main #flashcontent {
+	position:absolute;
+	top:0px;
+	left: 595px;
+}
+
+#playlist {
+	position:absolute;
+	top:240px;
+	left: 560px;
+	border: 2px solid #ebf3fb;
+	width: 340px;
+}
+#main #browse #title {
+	text-align: center;
+	vertical-align: middle;
+	color: #000000;
+	background-color: #ebf3fb;
+	font-weight: bold;
+}
+.yui-skin-sam #main #browse #demo {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	padding-top: 10px;
+}
+.errResult {
+	color:#FF0000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	padding-top: 5px;
+}

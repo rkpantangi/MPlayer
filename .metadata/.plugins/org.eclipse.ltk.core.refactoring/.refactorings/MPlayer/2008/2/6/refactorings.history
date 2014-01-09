@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 1 element(s) from project &apos;MPlayer&apos;&#x0D;&#x0A;- Original project: &apos;MPlayer&apos;&#x0D;&#x0A;- Original element: &apos;MPlayer/src/com.mplayer.playlist&apos;" description="Delete element" element1="/src&lt;com.mplayer.playlist" element2="/src&lt;com.mplayer" element3="/src&lt;com" elements="3" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1202009392886" subPackages="false" version="1.0"/>
+</session>

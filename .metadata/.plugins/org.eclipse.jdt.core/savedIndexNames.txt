@@ -1,0 +1,3 @@
+INDEX VERSION 1.126+C:\Data\projects\MPlayer\.metadata\.plugins\org.eclipse.jdt.core
+3632243160.index
+1812001705.index

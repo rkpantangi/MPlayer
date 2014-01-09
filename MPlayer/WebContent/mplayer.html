@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>My new Music Player</title>
+<script type="text/javascript" src="js/swfobject.js"></script>
+<link href="css/mplayer.css" rel="stylesheet" type="text/css" />
+<!-- Sam Skin CSS for TabView -->
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.4.1/build/tabview/assets/skins/sam/tabview.css">
+
+<!-- JavaScript Dependencies for Tabview: -->
+<script type="text/javascript" src="http://yui.yahooapis.com/2.4.1/build/yahoo-dom-event/yahoo-dom-event.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.4.1/build/element/element-beta-min.js"></script>
+
+<!-- OPTIONAL: Connection (required for dynamic loading of data) -->
+<script type="text/javascript" src="http://yui.yahooapis.com/2.4.1/build/connection/connection-min.js"></script>
+
+<!-- Source file for TabView -->
+<script type="text/javascript" src="http://yui.yahooapis.com/2.4.1/build/tabview/tabview-min.js"></script>
+<!-- Dependency -->
+<script src="http://yui.yahooapis.com/2.4.1/build/yahoo/yahoo-min.js"></script>
+
+<!-- Used for Custom Events and event listener bindings -->
+<script src="http://yui.yahooapis.com/2.4.1/build/event/event-min.js"></script>
+<script language="JavaScript" type="text/javascript">
+function goSearch() {
+	var searchStr = document.getElementById("searchBox");
+	var transaction = YAHOO.util.Connect.asyncRequest('GET', "sr", processSearchResults, null);
+};
+
+var processSearchResults =
+{
+    success: function(o) {/*success handler code*/
+	  	var sr = document.getElementById("searchResults");
+		sr.innerHTML=o.responseText;	
+    },
+    failure: function(o) {/*failure handler code*/
+	  	var sr = document.getElementById("searchResults");
+		sr.innerHTML="Error in finding the results!";
+		sr.className="errResult";
+  	},
+	abort: function(o) {
+		alert("aborted");
+	}
+};
+</script>
+</head>
+<body class="yui-skin-sam">
+<div id="main">
+<div id="browse">
+<div id="title">Search and listen to music!</div>
+<div id="searchSection">
+<div id="search"><input name="searchBox" id="searchBox" type="text" value="Movie or Singer Or Music Director" size="40" maxlength="50" />&nbsp;&nbsp;<input name="bSearch" type="button" onclick="goSearch()" value="Search" /></div></div>
+
+<div id="searchResults"></div>
+<script type="text/javascript">
+var myTabs = new YAHOO.widget.TabView("demo");
+</script> 
+
+<div id="demo" class="yui-navset">
+    <ul class="yui-nav">
+        <li class="selected"><a href="#tab1"><em>Movies</em></a></li>
+        <li><a href="#tab2"><em>Singers</em></a></li>
+        <li><a href="#tab3"><em>Music Directors</em></a></li>
+    </ul>            
+    <div class="yui-content">
+        <div><p>List of Movies</p></div>
+        <div><p>List of Singers</p></div>
+        <div><p>List of Music Directors</p></div>
+    </div>
+</div>
+
+</div>
+<div id="player">
+	<div id="flashcontent">
+		To view the <a href="http://www.e-phonic.com/mp3player/" target="_blank">E-Phonic MP3 Player</a> you will need to have Javascript turned on and have <a href="http://www.adobe.com/go/getflashplayer/" target="_blank">Flash Player 9</a> or better installed.
+	</div>
+
+	<script type="text/javascript">
+		// <![CDATA[
+
+		var so = new SWFObject("ep_player.swf", "ep_player", "269", "226", "9", "#FFFFFF");
+		so.addVariable("skin", "skins/nobius_blue/skin.xml");
+		so.addVariable("playlist", "gp");
+		so.addVariable("autoplay", "false");
+		so.addVariable("shuffle", "false");
+		so.addVariable("repeat", "false");
+		so.addVariable("buffertime", "1");
+		so.write("flashcontent");
+
+		// ]]>
+	</script>
+</div>
+<div id="playlist">Here is my playlist</div>
+</div>
+</body>
+</html>
